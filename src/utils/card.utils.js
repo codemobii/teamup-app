@@ -187,7 +187,10 @@ const CardUtils = () => {
           sender: id,
           recievers: data.emails.toString(),
         };
-        inviteMembers(inviteData);
+        // console.log(data.emails);
+        if (data.emails.length !== 0) {
+          inviteMembers(inviteData);
+        }
         getCards();
       })
       .catch(er => {
