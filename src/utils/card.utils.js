@@ -8,7 +8,7 @@ const CardUtils = () => {
   //
 
   const toast = useToast();
-  let history = useHistory();
+  // let history = useHistory();
 
   // State managers
   const [loading, setLoading] = useState(true);
