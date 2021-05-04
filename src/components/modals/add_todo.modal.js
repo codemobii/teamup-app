@@ -37,7 +37,7 @@ export default function AddTodoModal({
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Add a new todo</ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton rounded="full" />
         <ModalBody>
           <Stack spacing="20px">
             <FormControl id="first-name" isRequired>

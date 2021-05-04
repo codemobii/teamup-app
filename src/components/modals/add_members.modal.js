@@ -40,7 +40,7 @@ export default function AddMembersModal({
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Add new member(s)</ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton rounded="full" />
         <ModalBody>
           <Stack spacing="20px">
             <FormControl id="first-name" isRequired>
@@ -49,7 +49,7 @@ export default function AddMembersModal({
                 value={selected}
                 onChange={setSelected}
                 name="fruits"
-                placeHolder="Enter email"
+                placeHolder="Type email and hit enter to select"
               />
             </FormControl>
           </Stack>

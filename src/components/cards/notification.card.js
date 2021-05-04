@@ -29,7 +29,13 @@ export default function NotificationCard({ bell = {} }) {
       <Box w="90%">
         <Stack spacing="1">
           <Text>
-            <Linkify>{bell.text}</Linkify>
+            <Linkify
+              properties={{
+                style: { color: 'blue', fontWeight: 'bold' },
+              }}
+            >
+              {bell.text}
+            </Linkify>
           </Text>
           <Text fontSize="xs" color="gray.400">
             <TimeAgo date={bell.createdAt} />

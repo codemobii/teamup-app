@@ -41,7 +41,7 @@ export default function AddCardModal({
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Create a new card</ModalHeader>
-        <ModalCloseButton />
+        <ModalCloseButton rounded="full" />
         <ModalBody>
           <Stack spacing="20px">
             <FormControl id="title" isRequired>
@@ -59,7 +59,7 @@ export default function AddCardModal({
                 value={selected}
                 onChange={setSelected}
                 name="fruits"
-                placeHolder="Enter emails"
+                placeHolder="Type email and hit enter to select"
               />
             </FormControl>
           </Stack>
