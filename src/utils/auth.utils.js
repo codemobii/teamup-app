@@ -42,12 +42,13 @@ const AuthUtils = () => {
           duration: 5000,
           isClosable: true,
         });
+        Cookies.set('email', data.email, { expires: 2 });
         setTimeout(() => {
-          history.push('/auth/signin');
+          history.push('/auth/verify');
         }, 1000);
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,
@@ -74,7 +75,7 @@ const AuthUtils = () => {
       url: `${process.env.REACT_APP_API_URL}login`,
       data,
     })
-      .then(res => {
+      .then(async res => {
         toast({
           title: 'Success',
           description: 'Success',
@@ -82,12 +83,34 @@ const AuthUtils = () => {
           duration: 5000,
           isClosable: true,
         });
-        Cookies.set('token', res.data.token, { expires: 2 });
-        Cookies.set('id', res.data.user._id, { expires: 2 });
-        Cookies.set('role', res.data.user.role, { expires: 2 });
-        setTimeout(() => {
-          window.location.href = next_url ? next_url : '/';
-        }, 1000);
+        console.log(res.data);
+
+        if (res.data.user.isVerified) {
+          Cookies.set('token', res.data.token, { expires: 2 });
+          Cookies.set('id', res.data.user._id, { expires: 2 });
+          Cookies.set('role', res.data.user.role, { expires: 2 });
+          setTimeout(() => {
+            history.push(next_url ? next_url : '/');
+          }, 1000);
+        } else {
+          await Axios({
+            headers: {
+              'Access-Control-Allow-Origin': '*',
+            },
+            proxy: {
+              host: '104.236.174.88',
+              port: 3128,
+            },
+            method: 'POST',
+            url: `${process.env.REACT_APP_API_URL}sendCode`,
+            data,
+          }).then(() => {
+            Cookies.set('email', data.email, { expires: 2 });
+            setTimeout(() => {
+              history.push('/auth/verify');
+            }, 2000);
+          });
+        }
       })
       .catch(er => {
         toast({
@@ -167,7 +190,7 @@ const AuthUtils = () => {
           isClosable: true,
         });
         setTimeout(() => {
-          history.push('/auth/reset_password');
+          history.push('/auth/signin');
         }, 1000);
       })
       .catch(er => {

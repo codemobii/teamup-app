@@ -10,11 +10,13 @@ import AcceptInviteApp from '../pages/app/accept_invite.app';
 import BellsApp from '../pages/app/bells.app';
 import CardsApp from '../pages/app/cards.app';
 import HomeApp from '../pages/app/home.app';
+import InfoApp from '../pages/app/info.app';
 import ProfileApp from '../pages/app/profile.app';
 import ForgotPAsswordAuth from '../pages/auth/forgotpassword.auth';
 import ResetPasswordAuth from '../pages/auth/resetpassword.auth';
 import SignInAuth from '../pages/auth/signin.auth';
 import SignUpAuth from '../pages/auth/signup.auth';
+import VerifyAuth from '../pages/auth/verify.auth';
 import ScrollToTop from './scroll.routes';
 
 export default function RouterConfig() {
@@ -59,6 +61,9 @@ function RoutesConfig() {
         <Route exact path="/auth/reset-password">
           <ResetPasswordAuth />
         </Route>
+        <Route exact path="/auth/verify">
+          <VerifyAuth />
+        </Route>
 
         {/* App Routes */}
         <PrivateRoute exact path="/">
@@ -66,6 +71,9 @@ function RoutesConfig() {
         </PrivateRoute>
         <PrivateRoute exact path="/cards/:id">
           <CardsApp />
+        </PrivateRoute>
+        <PrivateRoute exact path="/cards/:id/info">
+          <InfoApp />
         </PrivateRoute>
         <PrivateRoute exact path="/bells">
           <BellsApp />

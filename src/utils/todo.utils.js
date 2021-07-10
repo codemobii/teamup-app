@@ -39,7 +39,7 @@ const TodoUtils = () => {
         setTodos(res.data.todos);
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,
@@ -80,7 +80,7 @@ const TodoUtils = () => {
         });
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,
@@ -121,7 +121,7 @@ const TodoUtils = () => {
         });
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,
@@ -162,7 +162,7 @@ const TodoUtils = () => {
         });
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,
@@ -203,7 +203,7 @@ const TodoUtils = () => {
         });
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,

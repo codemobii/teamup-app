@@ -44,7 +44,7 @@ const CardUtils = () => {
         setCards(res.data.cards);
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,
@@ -75,7 +75,7 @@ const CardUtils = () => {
         setCard(res.data.card);
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,
@@ -108,7 +108,7 @@ const CardUtils = () => {
         setCards_(res.data.cards);
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,
@@ -146,7 +146,7 @@ const CardUtils = () => {
         });
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,
@@ -194,7 +194,7 @@ const CardUtils = () => {
         getCards();
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,
@@ -232,7 +232,7 @@ const CardUtils = () => {
         });
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,

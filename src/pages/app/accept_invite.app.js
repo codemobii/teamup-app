@@ -25,7 +25,7 @@ export default function AcceptInviteApp() {
   }, []);
 
   return (
-    <AppLayout>
+    <AppLayout title="Invites">
       <Center
         w="100%"
         h="300px"

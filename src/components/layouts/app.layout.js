@@ -13,7 +13,7 @@ export const BellContext = createContext({
   getRings: () => {},
 });
 
-export default function AppLayout({ children }) {
+export default function AppLayout({ children, title = '' }) {
   const [rings, setRings] = useState(0);
   const [bells, setBells] = useState([]);
 
@@ -38,9 +38,7 @@ export default function AppLayout({ children }) {
         setBells(res.data.bells);
         console.log(res.data.bells.length);
       })
-      .catch(er => {
-        console.log(er.response.data);
-      });
+      .catch(er => {});
   };
 
   let ringData = {
@@ -67,9 +65,7 @@ export default function AppLayout({ children }) {
           setRings(res.data.bells.length);
           setBells(res.data.bells);
         })
-        .catch(er => {
-          console.log(er.response.data);
-        });
+        .catch(er => {});
     };
 
     getRings();
@@ -119,7 +115,7 @@ export default function AppLayout({ children }) {
         pb={{ base: '100px', md: '60px' }}
         pos="relative"
       >
-        <AppHeader />
+        <AppHeader title={title} />
 
         <Container maxW="container.md" pos="relative" py="20px">
           {children}

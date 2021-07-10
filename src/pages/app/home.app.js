@@ -31,7 +31,7 @@ export default function HomeApp() {
   }, []);
 
   return (
-    <AppLayout>
+    <AppLayout title="Cards">
       <Stack spacing="50px">
         <ContentCard
           title="My Cards"

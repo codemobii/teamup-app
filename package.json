@@ -21,8 +21,11 @@
     "react-router-dom": "^5.2.0",
     "react-router-transition": "^2.1.0",
     "react-scripts": "4.0.3",
+    "react-sessionstorage": "^1.0.5",
     "react-tag-input-component": "^1.0.7",
     "react-timeago": "^5.2.0",
+    "react-use-sessionstorage": "^1.0.2",
+    "socket.io-client": "^4.0.1",
     "uuid": "^8.3.2",
     "web-vitals": "^0.2.2"
   },

@@ -40,17 +40,17 @@ export default function ProfileApp() {
       type: 'email',
       data: 'email',
     },
-    {
-      label: user.password,
-      icon: <BsLock size="24px" />,
-      type: 'password',
-      data: 'password',
-    },
+    // {
+    //   label: user.password,
+    //   icon: <BsLock size="24px" />,
+    //   type: 'password',
+    //   data: 'password',
+    // },
   ];
 
   return (
-    <AppLayout>
-      <Stack spacing="20px">
+    <AppLayout title="Profile">
+      <Stack spacing="50px">
         <Center>
           <Avatar
             name={user.fullname}
@@ -97,16 +97,18 @@ export default function ProfileApp() {
             </Center>
           </Avatar>
         </Center>
-        {profileCards.map(e => (
-          <ProfileCard
-            type={e.type}
-            label={e.label}
-            icon={e.icon}
-            updateUser={updateUser}
-            data={e.data}
-            loading={_loading}
-          />
-        ))}
+        <Stack spacing="20px">
+          {profileCards.map(e => (
+            <ProfileCard
+              type={e.type}
+              label={e.label}
+              icon={e.icon}
+              updateUser={updateUser}
+              data={e.data}
+              loading={_loading}
+            />
+          ))}
+        </Stack>
         <Button
           onClick={handleLogout}
           isLoading={loading}

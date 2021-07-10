@@ -35,7 +35,7 @@ const UserUtils = () => {
         setUser(res.data.data);
       })
       .catch(er => {
-        console.log(er.response.data);
+        console.log(er);
         toast({
           title: 'Error',
           description: er.response.data.message,
@@ -146,7 +146,7 @@ const UserUtils = () => {
         console.log(er);
         toast({
           title: 'Error',
-          description: er.response.data.message,
+          description: er.response.data.message || 'Error occured',
           status: 'error',
           duration: 5000,
           isClosable: true,

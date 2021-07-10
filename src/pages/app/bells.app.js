@@ -110,7 +110,7 @@ export default function BellsApp() {
   }, []);
 
   return (
-    <AppLayout>
+    <AppLayout title="Notifications">
       <Stack spacing="50px">
         {bells.length === 0 ? (
           <EmptyCard />
