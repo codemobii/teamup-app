@@ -39,7 +39,7 @@
     "extends": "react-app"
   },
   "engines": {
-    "node": "18.x"
+    "node": "16.x"
   },
   "browserslist": {
     "production": [
